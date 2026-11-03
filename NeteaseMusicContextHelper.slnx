@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="NeteaseMusicCollecter/NeteaseMusicCollecter.csproj" />
+  <Project Path="RealtimeAssistant/RealtimeAssistant.csproj" Id="3e0af1a3-29a4-4616-a874-195dc1c9ab40" />
+  <Project Path="RealtimeAssistant.Tests/RealtimeAssistant.Tests.csproj" />
+  <Project Path="TestProject/TestProject.csproj" Id="c6f657df-f17d-4b25-982c-937d23a37348" />
+</Solution>

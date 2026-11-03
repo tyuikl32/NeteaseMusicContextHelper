@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
+  <data name="Settings" xml:space="preserve"><value>设置</value></data>
+  <data name="Language" xml:space="preserve"><value>界面语言</value></data>
+  <data name="LlmProvider" xml:space="preserve"><value>LLM 供应商</value></data>
+  <data name="Add" xml:space="preserve"><value>新增</value></data>
+  <data name="Remove" xml:space="preserve"><value>删除</value></data>
+  <data name="ProviderName" xml:space="preserve"><value>供应商名称</value></data>
+  <data name="Endpoint" xml:space="preserve"><value>服务端点</value></data>
+  <data name="Model" xml:space="preserve"><value>模型</value></data>
+  <data name="ApiKey" xml:space="preserve"><value>API Key</value></data>
+  <data name="BuiltInSearch" xml:space="preserve"><value>启用当前供应商的模型内置搜索</value></data>
+  <data name="BuiltInSearchHint" xml:space="preserve"><value>需要当前供应商和模型支持内置联网搜索，不支持时请关闭。</value></data>
+  <data name="WebSearch" xml:space="preserve"><value>联网搜索</value></data>
+  <data name="LocalSearch" xml:space="preserve"><value>启用本地工具搜索（Tavily）</value></data>
+  <data name="LocalSearchHint" xml:space="preserve"><value>由本地程序代模型搜索互联网，可与模型内置搜索同时启用。</value></data>
+  <data name="TavilyApiKey" xml:space="preserve"><value>Tavily API Key</value></data>
+  <data name="UserPrompt" xml:space="preserve"><value>用户提示词</value></data>
+  <data name="ColdMode" xml:space="preserve"><value>冷模式</value></data>
+  <data name="Cancel" xml:space="preserve"><value>取消</value></data>
+  <data name="Save" xml:space="preserve"><value>保存</value></data>
+  <data name="PinButton" xml:space="preserve"><value>置</value></data>
+  <data name="SettingsButton" xml:space="preserve"><value>设</value></data>
+  <data name="AlwaysOnTop" xml:space="preserve"><value>窗口置顶</value></data>
+  <data name="EmptyConversation" xml:space="preserve"><value>等待歌曲分析，或在下方输入问题…</value></data>
+  <data name="QuestionPlaceholder" xml:space="preserve"><value>输入问题…</value></data>
+  <data name="Send" xml:space="preserve"><value>发</value></data>
+  <data name="Stop" xml:space="preserve"><value>中断</value></data>
+  <data name="ConfirmAnalysis" xml:space="preserve"><value>要分析本次切换的歌曲吗？</value></data>
+  <data name="Yes" xml:space="preserve"><value>是</value></data>
+  <data name="No" xml:space="preserve"><value>否</value></data>
+  <data name="WaitingForSong" xml:space="preserve"><value>等待播放…</value></data>
+  <data name="UnnamedSong" xml:space="preserve"><value>未命名曲目</value></data>
+  <data name="You" xml:space="preserve"><value>你</value></data>
+  <data name="Assistant" xml:space="preserve"><value>助手</value></data>
+  <data name="Notice" xml:space="preserve"><value>提示</value></data>
+  <data name="Aborted" xml:space="preserve"><value>（已中止本次请求）</value></data>
+  <data name="WaitingForReply" xml:space="preserve"><value>正在等待 LLM 回复…</value></data>
+  <data name="AnalysisCountdown" xml:space="preserve"><value>{0} 秒后开始分析，按「中断」可取消</value></data>
+  <data name="ConfirmationCountdown" xml:space="preserve"><value>{0} 秒后默认选择「否」</value></data>
+  <data name="LoadOptionsFailed" xml:space="preserve"><value>读取 options.json 失败</value></data>
+  <data name="CollectorStartFailed" xml:space="preserve"><value>采集器启动失败</value></data>
+  <data name="CollectorError" xml:space="preserve"><value>采集器错误</value></data>
+  <data name="ScopedError" xml:space="preserve"><value>{0}：{1}</value></data>
+  <data name="EmptyAnswer" xml:space="preserve"><value>未收到回答正文，请重试。</value></data>
+  <data name="NewProviderName" xml:space="preserve"><value>供应商 {0}</value></data>
+  <data name="ProviderFieldsRequired" xml:space="preserve"><value>请填写供应商名称、服务端点和模型。</value></data>
+  <data name="InvalidEndpoint" xml:space="preserve"><value>服务端点必须是有效的绝对地址。</value></data>
+  <data name="DuplicateProviderName" xml:space="preserve"><value>供应商名称不能重复。</value></data>
+  <data name="SearchKeyRequired" xml:space="preserve"><value>请填写 Tavily API Key，或关闭本地工具搜索。</value></data>
+  <data name="SaveFailed" xml:space="preserve"><value>保存失败：{0}</value></data>
+  <data name="MissingProviderKey" xml:space="preserve"><value>供应商「{0}」没有配置 API Key，请在设置中填写。</value></data>
+  <data name="MissingProviderModel" xml:space="preserve"><value>供应商「{0}」没有配置模型，请在设置中填写。</value></data>
+  <data name="InvalidProviderEndpoint" xml:space="preserve"><value>供应商「{0}」的服务端点不是有效的绝对地址：{1}</value></data>
+  <data name="InvalidSearchQuery" xml:space="preserve"><value>搜索词不能为空，且不能超过 500 个字符。</value></data>
+  <data name="MissingSearchKey" xml:space="preserve"><value>没有配置 Tavily API Key，无法执行联网搜索。</value></data>
+  <data name="SearchHttpError" xml:space="preserve"><value>联网搜索失败（HTTP {0}），请勿将其视为没有相关资料。</value></data>
+  <data name="InvalidSearchResult" xml:space="preserve"><value>搜索服务返回了无效的结果。</value></data>
+  <data name="SearchTimeout" xml:space="preserve"><value>联网搜索超时，未能核实相关资料。</value></data>
+  <data name="SearchConnectionFailed" xml:space="preserve"><value>无法连接搜索服务，未能核实相关资料。</value></data>
+  <data name="SearchLimit" xml:space="preserve"><value>本次回答已达到 3 次联网搜索上限，请根据已有结果回答。</value></data>
+  <data name="EmptyOptions" xml:space="preserve"><value>配置文件内容是空的。</value></data>
+  <data name="NoProviders" xml:space="preserve"><value>options.json 里没有任何 chat 供应商，请补齐 chat.providers：{0}</value></data>
+</root>
+

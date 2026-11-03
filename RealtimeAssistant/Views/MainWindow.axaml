@@ -1,0 +1,200 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:RealtimeAssistant.ViewModels"
+        xmlns:loc="using:RealtimeAssistant.Localization"
+        xmlns:md="using:Markdown.Avalonia"
+        xmlns:ctxt="using:ColorTextBlock.Avalonia"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="420" d:DesignHeight="420"
+        Width="420"
+        Height="420"
+        MinWidth="320"
+        MinHeight="320"
+        Topmost="{Binding IsTopmost}"
+        x:Class="RealtimeAssistant.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="RealtimeAssistant">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+        to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="20,10,20,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0"
+                  ColumnDefinitions="*,Auto"
+                  VerticalAlignment="Bottom"
+                  Margin="0,0,10,0">
+
+                <TextBlock Grid.Column="0"
+                           Text="{Binding SongTitle}"
+                           FontSize="14"
+                           FontWeight="Bold"
+                           TextTrimming="CharacterEllipsis"
+                           VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Column="1"
+                           Text="{Binding ArtistName}"
+                           FontSize="10"
+                           Foreground="Gray"
+                           Margin="5,0,0,0"
+                           TextTrimming="CharacterEllipsis"
+                           MaxWidth="140"
+                           VerticalAlignment="Center"/>
+
+            </Grid>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="5" VerticalAlignment="Center">
+                <ToggleButton Content="{loc:Loc PinButton}"
+                              ToolTip.Tip="{loc:Loc AlwaysOnTop}"
+                              IsChecked="{Binding IsTopmost, Mode=TwoWay}"
+                              MinWidth="28"
+                              Height="24"
+                              HorizontalContentAlignment="Center"
+                              VerticalAlignment="Center"
+                              Padding="0" />
+                <Button Content="{loc:Loc SettingsButton}"
+                        ToolTip.Tip="{loc:Loc Settings}"
+                        Command="{Binding OpenSettingsCommand}"
+                        FontSize="14"
+                        Padding="0"
+                        VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        Width="24"
+                        Height="24" />
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="20,0,20,10">
+            <TextBlock Text="{loc:Loc EmptyConversation}"
+                       IsVisible="{Binding !Conversation.Count}"
+                       Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}"
+                       TextWrapping="Wrap"
+                       Margin="0,16" />
+            <ScrollViewer x:Name="ConversationScrollViewer"
+                          VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Disabled"
+                          ScrollChanged="OnConversationScrollChanged">
+                <ItemsControl ItemsSource="{Binding Conversation}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="vm:ConversationMessageViewModel">
+                            <Border BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                                    BorderThickness="0,0,0,1"
+                                    Padding="0,14">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Text="{Binding Author}" FontWeight="SemiBold" FontSize="12"
+                                               Foreground="{DynamicResource SystemControlForegroundBaseMediumBrush}" />
+                                    <TextBlock Text="{Binding Heading}" IsVisible="{Binding HasHeading}"
+                                               FontWeight="SemiBold" TextWrapping="Wrap" />
+                                    <SelectableTextBlock Text="{Binding Content}" IsVisible="{Binding IsPlainText}"
+                                                         FontSize="14" TextWrapping="Wrap" />
+                                    <md:MarkdownScrollViewer Markdown="{Binding Content}"
+                                                             IsVisible="{Binding IsMarkdown}"
+                                                             SelectionEnabled="True"
+                                                             MarkdownStyleName="FluentTheme"
+                                                             Loaded="OnMarkdownLoaded">
+                                        <md:MarkdownScrollViewer.Styles>
+                                            <Style Selector="TextBlock.CodeBlock">
+                                                <Setter Property="Foreground"
+                                                        Value="{DynamicResource SystemControlForegroundBaseHighBrush}" />
+                                            </Style>
+                                            <Style Selector=".Markdown_Avalonia_MarkdownViewer ctxt|CCode">
+                                                <Setter Property="Foreground"
+                                                        Value="{DynamicResource SystemControlForegroundBaseHighBrush}" />
+                                            </Style>
+                                        </md:MarkdownScrollViewer.Styles>
+                                    </md:MarkdownScrollViewer>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+
+        <Grid Grid.Row="2">
+
+            <Grid IsVisible="{Binding IsInputMode}"
+                  ColumnDefinitions="*,Auto">
+
+                <TextBox Grid.Column="0"
+                         x:Name="QuestionInputBox"
+                         Text="{Binding QuestionInput}"
+                         TextWrapping="Wrap"
+                         PlaceholderText="{loc:Loc QuestionPlaceholder}"
+                         FontSize="14"
+                         VerticalAlignment="Bottom"
+                         AcceptsReturn="True"
+                         MaxHeight="80"
+                         Margin="20,10,5,10"/>
+
+                <Button Grid.Column="1"
+                        Content="{loc:Loc Send}"
+                        Command="{Binding SendQuestionCommand}"
+                        FontSize="14"
+                        MinWidth="60"
+                        VerticalAlignment="Bottom"
+                        Margin="0,10,20,10"/>
+
+            </Grid>
+
+            <Grid IsVisible="{Binding IsRunningMode}"
+                  ColumnDefinitions="*,Auto">
+
+                <TextBlock Grid.Column="0"
+                           Text="{Binding StatusText}"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Bottom"
+                           Margin="20,10"/>
+
+                <Button Grid.Column="1"
+                        Content="{loc:Loc Stop}"
+                        Command="{Binding AbortCommand}"
+                        Width="55"
+                        VerticalAlignment="Bottom"
+                        Margin="0,10,20,10"/>
+
+            </Grid>
+
+            <Grid IsVisible="{Binding IsConfirmMode}"
+                  ColumnDefinitions="*,Auto,Auto">
+
+                <StackPanel Grid.Column="0" VerticalAlignment="Bottom" Margin="20,10" Spacing="3">
+                    <TextBlock Text="{loc:Loc ConfirmAnalysis}" TextWrapping="Wrap" />
+                    <TextBlock Text="{Binding StatusText}" FontSize="11" Foreground="Gray" TextWrapping="Wrap" />
+                </StackPanel>
+
+                <Button Grid.Column="1"
+                        Content="{loc:Loc Yes}"
+                        Command="{Binding ConfirmAnalysisCommand}"
+                        Width="45"
+                        VerticalAlignment="Bottom"
+                        Margin="0,10,5,10"/>
+
+                <Button Grid.Column="2"
+                        Content="{loc:Loc No}"
+                        Command="{Binding DeclineAnalysisCommand}"
+                        Width="45"
+                        VerticalAlignment="Bottom"
+                        Margin="0,10,20,10"/>
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+
+</Window>

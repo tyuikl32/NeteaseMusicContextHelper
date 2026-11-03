@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
+  <data name="Settings" xml:space="preserve"><value>Settings</value></data>
+  <data name="Language" xml:space="preserve"><value>Interface language</value></data>
+  <data name="LlmProvider" xml:space="preserve"><value>LLM provider</value></data>
+  <data name="Add" xml:space="preserve"><value>Add</value></data>
+  <data name="Remove" xml:space="preserve"><value>Remove</value></data>
+  <data name="ProviderName" xml:space="preserve"><value>Provider name</value></data>
+  <data name="Endpoint" xml:space="preserve"><value>Endpoint</value></data>
+  <data name="Model" xml:space="preserve"><value>Model</value></data>
+  <data name="ApiKey" xml:space="preserve"><value>API key</value></data>
+  <data name="BuiltInSearch" xml:space="preserve"><value>Enable the model's built-in search</value></data>
+  <data name="BuiltInSearchHint" xml:space="preserve"><value>Requires built-in web search support from the selected provider and model.</value></data>
+  <data name="WebSearch" xml:space="preserve"><value>Web search</value></data>
+  <data name="LocalSearch" xml:space="preserve"><value>Enable local search tool (Tavily)</value></data>
+  <data name="LocalSearchHint" xml:space="preserve"><value>The app searches the web for the model. Can be used alongside built-in search.</value></data>
+  <data name="TavilyApiKey" xml:space="preserve"><value>Tavily API key</value></data>
+  <data name="UserPrompt" xml:space="preserve"><value>User prompt</value></data>
+  <data name="ColdMode" xml:space="preserve"><value>Cold mode</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Save" xml:space="preserve"><value>Save</value></data>
+  <data name="PinButton" xml:space="preserve"><value>Pin</value></data>
+  <data name="SettingsButton" xml:space="preserve"><value>⚙</value></data>
+  <data name="AlwaysOnTop" xml:space="preserve"><value>Always on top</value></data>
+  <data name="EmptyConversation" xml:space="preserve"><value>Waiting for song analysis. You can also enter a question below…</value></data>
+  <data name="QuestionPlaceholder" xml:space="preserve"><value>Ask a question…</value></data>
+  <data name="Send" xml:space="preserve"><value>Send</value></data>
+  <data name="Stop" xml:space="preserve"><value>Stop</value></data>
+  <data name="ConfirmAnalysis" xml:space="preserve"><value>Analyze this song?</value></data>
+  <data name="Yes" xml:space="preserve"><value>Yes</value></data>
+  <data name="No" xml:space="preserve"><value>No</value></data>
+  <data name="WaitingForSong" xml:space="preserve"><value>Waiting for playback…</value></data>
+  <data name="UnnamedSong" xml:space="preserve"><value>Untitled song</value></data>
+  <data name="You" xml:space="preserve"><value>You</value></data>
+  <data name="Assistant" xml:space="preserve"><value>Assistant</value></data>
+  <data name="Notice" xml:space="preserve"><value>Notice</value></data>
+  <data name="Aborted" xml:space="preserve"><value>(Request cancelled)</value></data>
+  <data name="WaitingForReply" xml:space="preserve"><value>Waiting for the LLM response…</value></data>
+  <data name="AnalysisCountdown" xml:space="preserve"><value>Analysis starts in {0}s. Press Stop to cancel.</value></data>
+  <data name="ConfirmationCountdown" xml:space="preserve"><value>Defaults to No in {0}s.</value></data>
+  <data name="LoadOptionsFailed" xml:space="preserve"><value>Could not load options.json</value></data>
+  <data name="CollectorStartFailed" xml:space="preserve"><value>Could not start the collector</value></data>
+  <data name="CollectorError" xml:space="preserve"><value>Collector error</value></data>
+  <data name="ScopedError" xml:space="preserve"><value>{0}: {1}</value></data>
+  <data name="EmptyAnswer" xml:space="preserve"><value>No response text was received. Please try again.</value></data>
+  <data name="NewProviderName" xml:space="preserve"><value>Provider {0}</value></data>
+  <data name="ProviderFieldsRequired" xml:space="preserve"><value>Enter a provider name, endpoint and model.</value></data>
+  <data name="InvalidEndpoint" xml:space="preserve"><value>The endpoint must be a valid absolute URL.</value></data>
+  <data name="DuplicateProviderName" xml:space="preserve"><value>Provider names must be unique.</value></data>
+  <data name="SearchKeyRequired" xml:space="preserve"><value>Enter a Tavily API key or disable the local search tool.</value></data>
+  <data name="SaveFailed" xml:space="preserve"><value>Could not save settings: {0}</value></data>
+  <data name="MissingProviderKey" xml:space="preserve"><value>Provider &quot;{0}&quot; has no API key. Enter one in Settings.</value></data>
+  <data name="MissingProviderModel" xml:space="preserve"><value>Provider &quot;{0}&quot; has no model. Enter one in Settings.</value></data>
+  <data name="InvalidProviderEndpoint" xml:space="preserve"><value>Provider &quot;{0}&quot; has an invalid endpoint URL: {1}</value></data>
+  <data name="InvalidSearchQuery" xml:space="preserve"><value>The search query must contain between 1 and 500 characters.</value></data>
+  <data name="MissingSearchKey" xml:space="preserve"><value>No Tavily API key is configured. Web search is unavailable.</value></data>
+  <data name="SearchHttpError" xml:space="preserve"><value>Web search failed (HTTP {0}). This does not mean there are no relevant sources.</value></data>
+  <data name="InvalidSearchResult" xml:space="preserve"><value>The search service returned an invalid response.</value></data>
+  <data name="SearchTimeout" xml:space="preserve"><value>Web search timed out. Relevant sources could not be verified.</value></data>
+  <data name="SearchConnectionFailed" xml:space="preserve"><value>Could not connect to the search service. Relevant sources could not be verified.</value></data>
+  <data name="SearchLimit" xml:space="preserve"><value>The limit of 3 web searches for this answer has been reached. Use the existing results.</value></data>
+  <data name="EmptyOptions" xml:space="preserve"><value>The configuration file is empty.</value></data>
+  <data name="NoProviders" xml:space="preserve"><value>No chat providers are configured. Add chat.providers in options.json: {0}</value></data>
+</root>
+
